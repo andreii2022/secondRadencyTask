@@ -1,8 +1,14 @@
-import { configureStore } from '@reduxjs/toolkit';
-import rootReducer from './rootReducer';
+// src/store/store.ts
 
-const store = configureStore({
-  reducer: rootReducer,
+import { configureStore } from '@reduxjs/toolkit';
+import notesReducer from './notesSlice';
+
+export const store = configureStore({
+  reducer: {
+    // Добавьте сюда все ваши Slices (срезы)
+    notes: notesReducer,
+  },
 });
 
-export default store;
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
