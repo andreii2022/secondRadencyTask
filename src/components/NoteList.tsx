@@ -1,35 +1,26 @@
+
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { images } from './path/to/your/images'; // Путь к массиву images из предыдущих ответов
+import { useSelector } from 'react-redux';
+import { Note } from '../store/notesSlice';
+import NoteItem from '../store/NoteItem';
+import Table from './Table';
 
-const ImageComponent = ({ imgName, imgUrl }) => {
-  return (
-    <div>
-      <div dangerouslySetInnerHTML={{ __html: imgUrl }} />
-      <p>{imgName}</p>
-    </div>
-  );
-};
-
-const NoteList = () => {
-  // Получение заметок из хранилища Redux (предполагается, что у вас есть rootReducer с полем notes)
-  const notes = useSelector((state) => state.notes);
-
-  const dispatch = useDispatch();
+const NoteList: React.FC = () => {
+  const notes = useSelector((state: { notes: Note[] }) => state.notes);
+  const tableHeaders = ['ID', 'Content', 'Archived'];
+  const tableData = notes.map((note) => [
+    note.id,
+    note.content,
+    note.archived ? 'Yes' : 'No',
+  ]);
 
   return (
     <div>
       <h2>List of Notes</h2>
-      <ul>
-        {notes.map((note) => (
-          <li key={note.id}>
-            <ImageComponent imgName={images[note.imgIndex].imgName} imgUrl={images[note.imgIndex].imgUrl} />
-            <p>{note.content}</p>
-          </li>
-        ))}
-      </ul>
+      <Table headers={tableHeaders} data={tableData} />
     </div>
   );
-};
 
-export default NoteList;
+  // ... остальной код компонента ...
+};
+ export default NoteList;

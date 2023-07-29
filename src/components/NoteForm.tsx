@@ -1,17 +1,19 @@
-// NoteForm.tsx
+// src/components/NoteForm.tsx
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addNote } from '../store/notesSlice';
 
 const NoteForm: React.FC = () => {
-  const dispatch = useDispatch();
   const [content, setContent] = useState('');
+
+  const dispatch = useDispatch();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (content.trim() === '') return;
-    dispatch(addNote({ id: Date.now(), content, category: '', archived: false }));
-    setContent('');
+    if (content.trim() !== '') {
+      dispatch(addNote({ id: Date.now(), content, archived: false }));
+      setContent('');
+    }
   };
 
   return (
