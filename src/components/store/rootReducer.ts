@@ -1,7 +1,8 @@
 import { combineReducers } from '@reduxjs/toolkit';
+import notesReducer from '../table/notesSlice';
 
 const rootReducer = combineReducers({
-  // Здесь добавьте ваши редьюсеры
+  notes: notesReducer,
 });
 
 export default rootReducer;
