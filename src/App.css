@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+
+* {
+  --primary: #0e191a; ;
+  --secondary: #7ebdc2;
+  --dark: #231f20;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: azure;
+}
+
+img {
+  max-width: 30px;
+}
+
+.App {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main-content"
+    "footer";
+}
+
+.appContainer {
+  min-height: 80vh;
+  grid-area: main-content;
+  font-family: Arial, Helvetica, sans-serif; 
+  margin: 10px 20px;  
+}
+
+.footer {
+  background-color: var(--dark);
+  color: azure;
+  grid-area: footer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  font-family: Arial, Helvetica, sans-serif; 
+}
+
+.fancyButton {
+  background-color: var(--primary);
+  border: var(--primary);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in, box-shadow 0.2s ease-in;
+}
+
+.fancyButton:hover {
+  background-color: azure;
+  color: var(--primary);
+  outline: 1px solid var(--primary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+.mainTable {
+  margin-bottom: 15px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.mainTable th, .mainTable td {
+  border: 1px solid var(--secondary);
+  padding: 8px;
+}
+
+.mainTable th {
+  background-color: var(--secondary);
+  color: #fff;
+  text-align: left;
+}
+
+.mainTable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.mainTable tr:hover {
+  background-color: #ddd;
+  transform: scale(1.02); 
+  transition: transform 0.2s ease-in;
+}
+
+.btn-create {
+  background-color: var(--secondary);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in;
+}
+
+.btn-create:hover {
+  background-color: #6caddf;
+}
+
+
+.date-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.date-column p {
+  margin: 2px;
+}
+
+
+.header {
+  background: var(--primary); 
+  color: #000; 
+}
+
+
+
+.mainTable {
+  margin-bottom: 15px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.mainTable th, .mainTable td {
+  border: 1px solid var(--secondary);
+  padding: 8px;
+}
+
+.mainTable th {
+  background-color: var(--secondary);
+  color: #fff;
+  text-align: left;
+}
+
+.mainTable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.mainTable tr:hover {
+  background-color: #ddd;
+  transform: scale(1.02); 
+  transition: transform 0.2s ease-in;
+}
+
+
+.btn-create {
+  background-color: var(--secondary);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in;
+}
+
+.btn-create:hover {
+  background-color: #6caddf;
+}
+
+
+.date-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.date-column p {
+  margin: 2px;
+}
