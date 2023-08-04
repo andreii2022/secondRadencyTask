@@ -1,14 +1,13 @@
-// tailwind.config.js
 module.exports = {
   purge: [],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: false,
   theme: {
     extend: {
       colors: {
         primary: '#0e191a',
         secondary: '#7ebdc2',
         dark: '#231f20',
-        azure: 'azure', // Ваш колір 'azure'
+        azure: 'azure',
       },
       fontFamily: {
         custom: ['Poiret One', 'Arial', 'Helvetica', 'sans-serif'],
