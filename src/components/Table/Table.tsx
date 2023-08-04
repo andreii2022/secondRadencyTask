@@ -1,10 +1,9 @@
-import React, { FC, JSX } from "react";
-import styles from "./Table.module.css";
-import Table from "react-bootstrap/Table";
+import React, { FC, ReactNode } from "react";
+import { Table } from "react-bootstrap";
 
 type TableProps = {
-  headers: (string | JSX.Element[])[];
-  children: JSX.Element | JSX.Element[];
+  headers: (string | ReactNode)[];
+  children: ReactNode;
 };
 
 const CustomTable: FC<TableProps> = ({ headers, children }) => {
@@ -13,7 +12,7 @@ const CustomTable: FC<TableProps> = ({ headers, children }) => {
       <thead>
         <tr>
           {headers.map((el, i) => (
-            <th scope="col" key={i} className={styles.headers}>
+            <th scope="col" key={i} className="border px-4 py-2">
               {el}
             </th>
           ))}
