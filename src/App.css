@@ -1,10 +1,5 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap"); */
-/* src/index.css */
-/* @import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities'; */
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
 
-/* 
 * {
   --primary: #0e191a; ;
   --secondary: #7ebdc2;
@@ -176,66 +171,4 @@ img {
 
 .date-column p {
   margin: 2px;
-} */
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
-
-/* Custom Styles */
-.App {
-  @apply grid grid-rows-[auto,1fr,auto];
-}
-
-.appContainer {
-  @apply min-h-[80vh] grid-cols-1 gap-8;
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 10px 20px;
-}
-
-.footer {
-  @apply bg-gray-800 text-white grid-cols-1 items-center p-2;
-}
-
-.fancyButton {
-  @apply bg-primary border-primary text-white py-2 px-4 rounded cursor-pointer transition duration-200 ease-in;
-}
-
-.fancyButton:hover {
-  @apply bg-white text-primary outline-primary shadow-md;
-}
-
-.mainTable {
-  @apply mb-8 border-collapse w-full;
-}
-
-.mainTable th, .mainTable td {
-  @apply border-secondary border py-2 px-4;
-}
-
-.mainTable th {
-  @apply bg-secondary text-white text-left;
-}
-
-.mainTable tr:nth-child(even) {
-  @apply bg-gray-100;
-}
-
-.mainTable tr:hover {
-  @apply bg-gray-300 transform scale-102 transition duration-200 ease-in;
-}
-
-.btn-create {
-  @apply bg-secondary text-white border-none py-2 px-4 rounded cursor-pointer transition duration-200 ease-in;
-}
-
-.btn-create:hover {
-  @apply bg-blue-400;
-}
-
-.date-column {
-  @apply flex flex-col;
-}
-
-.date-column p {
-  @apply m-1;
-}
+} 
