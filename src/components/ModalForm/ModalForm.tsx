@@ -1,9 +1,7 @@
+
 import React, { FC } from "react";
-import styles from "./ModalForm.module.css";
-import {Button,FormControl,FormGroup,FormLabel,FormSelect,Modal,
-} from "react-bootstrap";
-import {Note,addNote,editNote,getNotesList,
-} from "../../redux/reducers/notesReducer";
+import { Button, FormControl, FormGroup, FormLabel, FormSelect, Modal } from "react-bootstrap";
+import { Note, addNote, editNote, getNotesList } from "../../redux/reducers/notesReducer";
 import { Formik, Form, Field } from "formik";
 import { useSelector } from "react-redux";
 import { validationSchema } from "./validation";
@@ -59,7 +57,7 @@ const ModalForm: FC<ModalFormProps> = ({
   };
 
   return (
-    <Modal {...{ show, onHide }}>
+    <Modal show={show} onHide={onHide}>
       <Modal.Header closeButton>
         <Modal.Title>{isCreate ? "Create" : "Edit"} Note</Modal.Title>
       </Modal.Header>
@@ -72,14 +70,14 @@ const ModalForm: FC<ModalFormProps> = ({
           validateOnMount={true}
         >
           {({ isValid, errors, touched }) => (
-            <Form className={styles.form}>
+            <Form className="p-4">
               <FormGroup>
                 <FormLabel>Note's name:</FormLabel>
                 <Field name="name" as={FormControl} />
               </FormGroup>
               <FormGroup>
                 <FormLabel>Choose category:</FormLabel>
-                <Field as={FormSelect} name="category">
+                <Field as={FormSelect} name="category" className="form-select">
                   {categories.map((item, index) => (
                     <option key={index} value={item.id}>
                       {item.title}
@@ -96,7 +94,7 @@ const ModalForm: FC<ModalFormProps> = ({
                   rows={3}
                 />
               </FormGroup>
-              <div className={styles.controlButtons}>
+              <div className="flex justify-end space-x-2 mt-4">
                 <Button variant="outline-secondary" onClick={onHide}>
                   Cancel
                 </Button>
